@@ -1,0 +1,7 @@
+{
+  "name": "project-blueprint",
+  "dockerComposeFile": "./docker-compose.yml",
+  "service": "dev",
+  "workspaceFolder": "/workspace/dev",
+  "postCreateCommand": "yarn"
+}
