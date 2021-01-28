@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/customcommander/project-blueprint/compare/v1.0.0...v1.0.1) (2021-01-28)
+
+
+### Bug Fixes
+
+* pass env vars to docker container in gh workflow ([28be287](https://github.com/customcommander/project-blueprint/commit/28be287f35ec971fe77457a54a1c402bde054877))
+
 # 1.0.0 (2021-01-28)
 
 
