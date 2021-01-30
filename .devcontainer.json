@@ -3,5 +3,8 @@
   "dockerComposeFile": "./docker-compose.yml",
   "service": "dev",
   "workspaceFolder": "/workspace/dev",
-  "postCreateCommand": "yarn"
+  "postCreateCommand": "yarn",
+  "settings": {
+    "terminal.integrated.shell.*": "/bin/bash"
+  }
 }
