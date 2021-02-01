@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/customcommander/project-blueprint/compare/v1.0.2...v1.1.0) (2021-02-01)
+
+
+### Bug Fixes
+
+* make sure vscode uses bash when working inside a container ([f32c728](https://github.com/customcommander/project-blueprint/commit/f32c728d8eb50062effac84e639d6d3ce20f4719))
+
+
+### Features
+
+* export symbols based on jsdoc annotations ([79af28f](https://github.com/customcommander/project-blueprint/commit/79af28f585bf923d479bf000f866ba8af9fe8cd6))
+
 ## [1.0.2](https://github.com/customcommander/project-blueprint/compare/v1.0.1...v1.0.2) (2021-01-28)
 
 
