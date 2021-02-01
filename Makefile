@@ -16,7 +16,7 @@ dist/%: src/%
 tmp/metadata: $(patsubst src/%.js,tmp/metadata/%.raw.json,$(src_files))
 tmp/metadata/%.raw.json: src/%.js
 	mkdir -p $(@D)
-	./node_modules/.bin/jsdoc --debug --explain --access "public" $< | tee $@
+	yarn -s jsdoc --configure jsdoc.json --explain --access "public" $< > $@
 
 tmp/metadata/%.meta.json: tmp/metadata/%.raw.json scripts/metadata.jq
 	jq -f scripts/metadata.jq $< > $@

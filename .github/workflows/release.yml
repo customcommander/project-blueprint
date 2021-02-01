@@ -21,6 +21,5 @@ jobs:
         run: yarn
       - name: Build
         run: make build
-        shell: bash {0}
       - name: Release
         run: yarn semantic-release --no-ci
