@@ -20,6 +20,6 @@ jobs:
       - name: Install
         run: yarn
       - name: Build
-        run: yarn run build
+        run: make build
       - name: Release
         run: yarn semantic-release --no-ci
