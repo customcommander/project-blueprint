@@ -20,7 +20,7 @@ jobs:
       - name: Install
         run: yarn
       - name: Build
-        run: make build || find tmp -type f
+        run: make build || find tmp -type f | xargs cat
         shell: bash {0}
       - name: Release
         run: yarn semantic-release --no-ci
