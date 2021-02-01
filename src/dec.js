@@ -7,6 +7,6 @@
 
 /**
  * @public
- * @function inc
+ * @function dec
  */
-module.exports = x => x + 1;
+module.exports = x => x - 1;

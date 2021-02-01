@@ -1,0 +1,23 @@
+<%#
+  Generate the content for dist/index.js
+  Takes data from tmp/exports.json
+%>
+
+// GENERATED FILE. DO NOT EDIT!
+// <%= new Date().toUTCString() %>
+
+<% const is_ns = x => typeof x !== 'string'; %>
+
+<%  const print = (exp, root) => {
+      for (let k in exp) { %>
+        <%= k %>: <%  if (is_ns(exp[k])) { %>
+                        { <% print(exp[k], false) %> },
+                  <%  } else { %>
+                        require('<%= exp[k] %>')<%= root ? '' : `.${k}` %>,
+                  <%  } %>
+<%    }
+    } %>
+
+module.exports = {
+  <% print(exports, true) %>
+};
