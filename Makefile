@@ -19,7 +19,8 @@ tmp/metadata/%.raw.json: src/%.js
 	yarn -s jsdoc --explain --access "public" $< > $@
 
 tmp/metadata/%.meta.json: tmp/metadata/%.raw.json scripts/metadata.jq
-	jq -f scripts/metadata.jq $< > $@
+	-jq -f scripts/metadata.jq $< > $@
+	cat $<
 
 tmp/exports.json: $(patsubst src/%.js,tmp/metadata/%.meta.json,$(src_files)) scripts/exports.jq
 	jq -f scripts/exports.jq --raw-output -M --slurp $(filter %.meta.json,$^) > $@
