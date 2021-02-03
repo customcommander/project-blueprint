@@ -1,0 +1,1 @@
+("var " + $BROWSER_NS + ";"), (.. | keys? | .[] | "var \(.);")

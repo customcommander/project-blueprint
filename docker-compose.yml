@@ -6,5 +6,7 @@ services:
     image: customcommander/webdev
     volumes:
       - .:/workspace/dev
-    tty: true
     stdin_open: true
+    working_dir: /workspace/dev
+    env_file:
+      - .env
