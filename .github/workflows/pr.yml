@@ -9,15 +9,14 @@ on:
 jobs:
   main:
     runs-on: ubuntu-latest
-    container:
-      image: customcommander/webdev
-      env:
-        GH_TOKEN: ${{secrets.GH_TOKEN}}
-        NPM_TOKEN: ${{secrets.NPM_TOKEN}}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Setup
+        run: docker-compose up -d
       - name: Install
-        run: yarn
+        run: docker-compose exec -T dev yarn
       - name: Build
-        run: make build
+        run: docker-compose exec -T dev make dist
+      - name: Cleanup
+        run: docker-compose down
