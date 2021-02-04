@@ -19,11 +19,9 @@ jobs:
       - name: Build
         run: docker-compose exec -T dev make dist
       - name: Release
-        run: >
-          docker-compose exec
-            -T
-            -e GH_TOKEN=${{secrets.GH_TOKEN}}
-            -e NPM_TOKEN=${{secrets.NPM_TOKEN}}
-            dev yarn semantic-release --no-ci
+        run: docker-compose exec -T -e GH_TOKEN -e NPM_TOKEN dev yarn semantic-release --no-ci
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: Cleanup
         run: docker-compose down
