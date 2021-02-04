@@ -1,3 +1,16 @@
+# [1.2.0](https://github.com/customcommander/project-blueprint/compare/v1.1.0...v1.2.0) (2021-02-04)
+
+
+### Bug Fixes
+
+* pass secrets as env vars not as key=val pairs ([350eb76](https://github.com/customcommander/project-blueprint/commit/350eb769afc03fb97fda6c3ecebfbd3c8f7143dd))
+
+
+### Features
+
+* add new github workflow on pull requests ([473d0a9](https://github.com/customcommander/project-blueprint/commit/473d0a93f2e3f920e1ae70fb8f956eebf40889b3))
+* use google closure compiler to produce a browser bundle ([ea36c05](https://github.com/customcommander/project-blueprint/commit/ea36c056eca56719ff484b432e633ba2f9f42452))
+
 # [1.1.0](https://github.com/customcommander/project-blueprint/compare/v1.0.2...v1.1.0) (2021-02-01)
 
 
