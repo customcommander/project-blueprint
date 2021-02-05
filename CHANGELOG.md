@@ -1,3 +1,16 @@
+# [1.3.0](https://github.com/customcommander/project-blueprint/compare/v1.2.0...v1.3.0) (2021-02-05)
+
+
+### Bug Fixes
+
+* minify node distribution files ([cce2fa4](https://github.com/customcommander/project-blueprint/commit/cce2fa42cd1d4d0cdbedbfeaffcda7225efc622a))
+* specify es2019 as input language when transpiling for browser ([224b183](https://github.com/customcommander/project-blueprint/commit/224b183f94758adbdf4083824d6ab067e4da32b7))
+
+
+### Features
+
+* add basic testing support ([821fffe](https://github.com/customcommander/project-blueprint/commit/821fffee40d14a5e7afeeb2a4d1b65c1a2f9b690))
+
 # [1.2.0](https://github.com/customcommander/project-blueprint/compare/v1.1.0...v1.2.0) (2021-02-04)
 
 
