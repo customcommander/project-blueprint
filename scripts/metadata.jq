@@ -12,7 +12,9 @@ def transform_doclet: {
   location: dist_path
 };
 
-{ namespace: map(select(.kind == "namespace"))[0].name
-, exports: (map(select(.access == "public") | transform_doclet)
-           | reduce .[] as $x ({}; (. + {($x.name): $x})))
-}
+(map(select(.kind == "namespace"))[0] | .name // "/") as $ns
+
+| { namespace: $ns
+  , exports: (map(select(.access == "public") | transform_doclet)
+           | reduce .[] as $x ({}; (. + { ($x.name): ({namespace: $ns} + $x) })))
+  }

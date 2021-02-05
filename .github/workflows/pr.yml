@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup
-        run: docker-compose up -d
+        run: docker-compose up -d dev
       - name: Install
         run: docker-compose exec -T dev yarn
       - name: Build
