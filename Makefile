@@ -11,14 +11,26 @@ dist: $(dist_files) dist/index.js dist/browser.min.js
 
 dist/%: src/%
 	mkdir -p $(@D)
-	cp $^ $@
+	$(CC) \
+		--compilation_level WHITESPACE_ONLY \
+		--language_in ECMASCRIPT_2019 \
+		--language_out ECMASCRIPT_2019 \
+		--js $< \
+		--js_output_file $@
 
 dist/index.js: tmp/__exports.json scripts/exports.ejs
 	EXPORT_PATH="module.exports" yarn -s ejs \
 		--no-with \
 		--locals-name exports \
 		--data-file tmp/__exports.json \
-			scripts/exports.ejs > $@
+			scripts/exports.ejs > tmp/__module-exports.js
+	$(CC) \
+		--compilation_level WHITESPACE_ONLY \
+		--language_in ECMASCRIPT_2019 \
+		--language_out ECMASCRIPT_2019 \
+		--js tmp/__module-exports.js \
+		--js_output_file $@
+	rm tmp/__module-exports.js
 
 dist/browser.min.js: tmp/__exports.json scripts/externs.jq scripts/exports.ejs
 	jq \
