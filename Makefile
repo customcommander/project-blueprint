@@ -46,6 +46,7 @@ dist/browser.min.js: tmp/__exports.json scripts/externs.jq scripts/exports.ejs
 			scripts/exports.ejs
 	$(CC) \
 		--compilation_level ADVANCED_OPTIMIZATIONS \
+		--language_in ECMASCRIPT_2019 \
 		--language_out ECMASCRIPT5_STRICT \
 		--module_resolution NODE \
 		--process_common_js_modules \
