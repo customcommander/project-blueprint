@@ -6,6 +6,10 @@ meta_files = $(patsubst src/%.js,tmp/%.meta.json,$(src_files))
 
 clean:; rm -rf tmp dist
 
+.PHONY: test
+test: dist
+	yarn -s tape test/*.js
+
 .PHONY: dist
 dist: $(dist_files) dist/index.js dist/browser.min.js
 
