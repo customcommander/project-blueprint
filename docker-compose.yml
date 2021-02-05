@@ -10,3 +10,12 @@ services:
     working_dir: /workspace/dev
     env_file:
       - .env
+
+  slate:
+    image: slatedocs/slate:v2.9.0
+    volumes:
+      - ./docs/index.html.md:/srv/slate/source/index.html.md
+      - ./docs/includes:/srv/slate/source/includes
+    command: serve
+    ports:
+      - "4567:4567"
