@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/customcommander/project-blueprint/compare/v1.3.0...v1.4.0) (2021-02-06)
+
+
+### Features
+
+* autogenerate docs using slate. basic support ([7794c98](https://github.com/customcommander/project-blueprint/commit/7794c9868ac4ea5ec51d2a50d3fbee684acbf361))
+
 # [1.3.0](https://github.com/customcommander/project-blueprint/compare/v1.2.0...v1.3.0) (2021-02-05)
 
 
