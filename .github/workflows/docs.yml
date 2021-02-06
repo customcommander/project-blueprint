@@ -22,10 +22,11 @@ jobs:
         run: >
           docker-compose exec -T dev yarn &&
           docker-compose exec -T dev make docs &&
-          docker run --rm -v ${{github.workspace}}/public:/srv/slate/build
-                          -v ${{github.workspace}}/docs/includes:/srv/slate/source/includes
-                          -v ${{github.workspace}}/docs/index.html.md:/srv/slate/source/index.html.md
-                            slatedocs/slate
+          docker run --rm
+          -v ${{github.workspace}}/public:/srv/slate/build
+          -v ${{github.workspace}}/docs/includes:/srv/slate/source/includes
+          -v ${{github.workspace}}/docs/index.html.md:/srv/slate/source/index.html.md
+          slatedocs/slate
 
       - name: Publish Docs
         if: success()
