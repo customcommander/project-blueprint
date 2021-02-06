@@ -1,1 +1,29 @@
-# <%= sym.name %>
+<%
+
+const sym_name = sym.name.trim();
+
+const print_parameters = () =>
+  (!sym.params
+    ? ''
+    : (`Parameter | Type
+        --------- | ----` +
+        sym.params.reduce((str, p) =>
+          `\n${p.name} | ${p.type}`,
+            '')));
+
+const print_examples = () =>
+  (sym.examples
+    ? sym.examples.join('\n')
+    : '');
+%>
+
+
+## <%- sym_name %>
+
+<%- sym.description %>
+
+<%- print_parameters() %>
+
+Returns `<%- sym.returns %>`.
+
+<%- print_examples() %>
