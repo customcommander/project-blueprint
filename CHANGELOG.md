@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/customcommander/project-blueprint/compare/v1.4.1...v1.4.2) (2021-02-06)
+
+
+### Bug Fixes
+
+* deindent run command when building doc ([5693b06](https://github.com/customcommander/project-blueprint/commit/5693b06eb6b78be7a93b4444e656e64810bdebb7))
+
 ## [1.4.1](https://github.com/customcommander/project-blueprint/compare/v1.4.0...v1.4.1) (2021-02-06)
 
 
