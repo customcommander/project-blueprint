@@ -6,10 +6,19 @@ def dist_path:
   | ltrimstr("/workspace/dev/src")
   | "./" + ltrimstr("/");
 
+def transform_params: map({
+  name,
+  type: (.type.names | join(", "))
+});
+
 def transform_doclet: {
   kind,
   name,
-  location: dist_path
+  location: dist_path,
+  description,
+  examples,
+  params: (.params | transform_params),
+  returns: (.returns | map(.type.names[]) | join(" | "))
 };
 
 (map(select(.kind == "namespace"))[0] | .name // "/") as $ns
