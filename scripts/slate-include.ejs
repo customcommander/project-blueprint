@@ -15,10 +15,17 @@ const print_examples = () =>
   (sym.examples
     ? sym.examples.join('\n')
     : '');
+
+const print_deprecation_warning = () =>
+  (sym.deprecated === null
+    ? ''
+    : `<aside class="warning">*DEPRECATED*. ${sym.deprecated}</aside>`)
 %>
 
 
 ## <%- sym_name %>
+
+<%- print_deprecation_warning() %>
 
 <%- sym.description %>
 

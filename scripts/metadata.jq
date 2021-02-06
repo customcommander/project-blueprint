@@ -17,8 +17,9 @@ def transform_doclet: {
   location: dist_path,
   description,
   examples,
-  params: (.params | transform_params),
-  returns: (.returns | map(.type.names[]) | join(" | "))
+  params: (if .params then .params | transform_params else null end),
+  returns: (.returns | map(.type.names[]) | join(" | ")),
+  deprecated
 };
 
 (map(select(.kind == "namespace"))[0] | .name // "/") as $ns
