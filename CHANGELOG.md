@@ -1,3 +1,11 @@
+# [1.5.0](https://github.com/customcommander/project-blueprint/compare/v1.4.2...v1.5.0) (2021-02-06)
+
+
+### Features
+
+* add support for deprecation ([d7c1e19](https://github.com/customcommander/project-blueprint/commit/d7c1e19e2e5eb7123336b8119f507fb1c906a6bd))
+* add support for description, parameters and return value ([47a642c](https://github.com/customcommander/project-blueprint/commit/47a642c38e5510e90a9cb345a8c9eed5a2a7dc5a))
+
 ## [1.4.2](https://github.com/customcommander/project-blueprint/compare/v1.4.1...v1.4.2) (2021-02-06)
 
 
