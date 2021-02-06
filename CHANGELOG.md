@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/customcommander/project-blueprint/compare/v1.4.0...v1.4.1) (2021-02-06)
+
+
+### Bug Fixes
+
+* fix setup step on docs deployment ([7d8eff8](https://github.com/customcommander/project-blueprint/commit/7d8eff8d8d7c8dd9395234f4cd8ed2586e568a22))
+
 # [1.4.0](https://github.com/customcommander/project-blueprint/compare/v1.3.0...v1.4.0) (2021-02-06)
 
 
