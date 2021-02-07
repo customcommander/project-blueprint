@@ -19,7 +19,7 @@ const print_examples = () =>
 const print_deprecation_warning = () =>
   (sym.deprecated === null
     ? ''
-    : `<aside class="warning">*DEPRECATED*. ${sym.deprecated}</aside>`)
+    : `<aside class="warning"><strong>DEPRECATED</strong><br>${sym.deprecated}</aside>`)
 %>
 
 
