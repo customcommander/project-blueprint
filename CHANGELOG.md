@@ -1,3 +1,16 @@
+# [1.7.0](https://github.com/customcommander/project-blueprint/compare/v1.6.0...v1.7.0) (2021-02-07)
+
+
+### Bug Fixes
+
+* fix bold rendering in deprecation warning ([d5cff67](https://github.com/customcommander/project-blueprint/commit/d5cff67e00d91a25f0db4a07f41a4f00c621469f))
+* fix bug where parameters table was reduced to only one row ([bc2e939](https://github.com/customcommander/project-blueprint/commit/bc2e939ae39cb74057bed0cf36359f81ec7748bc))
+
+
+### Features
+
+* add param description and indicate when a param is optional ([04822a2](https://github.com/customcommander/project-blueprint/commit/04822a2a1acb7aeee6fd01afb35859f772d6cf98))
+
 # [1.6.0](https://github.com/customcommander/project-blueprint/compare/v1.5.0...v1.6.0) (2021-02-07)
 
 
