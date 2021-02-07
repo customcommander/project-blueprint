@@ -5,7 +5,8 @@
   "repository": "https://github.com/customcommander/project-blueprint.git",
   "description": "A template for managing the development lifecycle of a Node.js package",
   "files": [
-    "dist"
+    "dist/index.js",
+    "dist/browser.min.js"
   ],
   "main": "dist/index.js",
   "browser": "dist/browser.min.js",

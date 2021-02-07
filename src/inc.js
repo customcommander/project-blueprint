@@ -3,6 +3,8 @@
  * @copyright (c) 2021 Julien Gonzalez
  */
 
+const {is_number} = require('./utils');
+
 /** @namespace / */
 
 /**
@@ -19,4 +21,4 @@
  * @param {number} x
  * @return {number}
  */
-module.exports = x => x + 1;
+module.exports = x => is_number(x) ? x + 1 : x;

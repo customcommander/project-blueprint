@@ -1,11 +1,3 @@
-<%#
-  Generate the content for dist/index.js
-  Takes data from tmp/exports.json
-%>
-
-// GENERATED FILE. DO NOT EDIT!
-// <%= new Date().toUTCString() %>
-
 <% const is_ns = x => typeof x !== 'string'; %>
 
 <%  const print = (exp, root) => {
@@ -18,6 +10,6 @@
 <%    }
     } %>
 
-<%= process.env.EXPORT_PATH %> = {
+window.__________ = {
   <% print(exports, true) %>
 };
