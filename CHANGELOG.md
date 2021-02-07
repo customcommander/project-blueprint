@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/customcommander/project-blueprint/compare/v1.5.0...v1.6.0) (2021-02-07)
+
+
+### Features
+
+* implement curry to experiment with the closure compiler ([7b11812](https://github.com/customcommander/project-blueprint/commit/7b118122d857f7be81c7f955a0fb1d0eb0bff832))
+
 # [1.5.0](https://github.com/customcommander/project-blueprint/compare/v1.4.2...v1.5.0) (2021-02-06)
 
 
