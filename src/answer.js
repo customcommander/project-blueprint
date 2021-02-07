@@ -3,7 +3,7 @@
 /**
  * @deprecated Just use 42 instead.
  * @public
- * @function foo
+ * @function answer
  * @return {number}
  */
 module.exports = () => 42;
