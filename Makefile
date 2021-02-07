@@ -40,51 +40,33 @@ dist: $(dist_files) dist/index.js dist/browser.min.js
 
 dist/%: src/%
 	mkdir -p $(@D)
-	$(CC) \
-		--compilation_level WHITESPACE_ONLY \
-		--language_in ECMASCRIPT_2019 \
-		--language_out ECMASCRIPT_2019 \
-		--js $< \
-		--js_output_file $@
+	cp $< $@
 
-dist/index.js: tmp/__exports.json scripts/exports.ejs
-	EXPORT_PATH="module.exports" yarn -s ejs \
-		--no-with \
-		--locals-name exports \
-		--data-file tmp/__exports.json \
-			scripts/exports.ejs > tmp/__module-exports.js
-	$(CC) \
-		--compilation_level WHITESPACE_ONLY \
-		--language_in ECMASCRIPT_2019 \
-		--language_out ECMASCRIPT_2019 \
-		--js tmp/__module-exports.js \
-		--js_output_file $@
-	rm tmp/__module-exports.js
-
-dist/browser.min.js: tmp/__exports.json scripts/externs.jq scripts/exports.ejs
+dist/__exports.js: $(dist_files) tmp/__exports.json scripts/externs.jq scripts/exports.ejs
 	jq \
 		-f scripts/externs.jq \
 		--raw-output \
-		--arg BROWSER_NS $(BROWSER_NS) \
-			$< > dist/__externs.js
-	EXPORT_PATH="window.$(BROWSER_NS)" yarn -s ejs \
-		--no-with \
+			tmp/__exports.json > dist/__externs.js
+	$(EJS) \
 		--locals-name exports \
 		--data-file tmp/__exports.json \
-		--output-file dist/__browser.js \
+		--output-file dist/__exports-raw.js \
 			scripts/exports.ejs
 	$(CC) \
 		--compilation_level ADVANCED_OPTIMIZATIONS \
-		--language_in ECMASCRIPT_2019 \
-		--language_out ECMASCRIPT5_STRICT \
+		--language_in ECMASCRIPT_NEXT \
 		--module_resolution NODE \
 		--process_common_js_modules \
-		--externs dist/__externs.js \
 		--isolation_mode IIFE \
-		--js $(dist_files) dist/__browser.js \
+		--externs dist/__externs.js \
+		--js $(dist_files) dist/__exports-raw.js \
 		--js_output_file $@
-	rm dist/__externs.js
-	rm dist/__browser.js
+
+dist/index.js: dist/__exports.js
+	sed 's/window.__________/module.exports/' $< > $@
+
+dist/browser.min.js: dist/__exports.js
+	sed 's/window.__________/window.$(BROWSER_NS)/' $< > $@
 
 tmp/%.raw.json: src/%.js
 	mkdir -p $(@D)
