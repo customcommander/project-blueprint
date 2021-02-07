@@ -8,7 +8,9 @@ def dist_path:
 
 def transform_params: map({
   name,
-  type: (.type.names | join(", "))
+  type: (.type.names | join(", ")),
+  description,
+  optional: (.optional == true)
 });
 
 def transform_doclet: {
