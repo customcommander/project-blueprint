@@ -6,6 +6,8 @@ Date: 2021-02-08
 
 Accepted
 
+Explains [3. Test Distributed Files Only](0003-test-distributed-files-only.md)
+
 ## Context
 
 We must allow developers to use new JavaScript syntax and features without excluding older execution environments. Code must be automatically checked against common development mistakes and optimised for download and execution.
