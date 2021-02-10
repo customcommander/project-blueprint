@@ -68,9 +68,18 @@ dist/index.js: dist/__exports.js
 dist/browser.min.js: dist/__exports.js
 	sed 's/window.__________/window.$(BROWSER_NS)/' $< > $@
 
+# For each file in `src` we have a corresponding file in `tmp` e.g.,
+# src/foo.js -> tmp/foo.raw.json
+# src/utils/bar.js -> tmp/utils/bar.raw.json
+# Each *.raw.json file contains the output of JSDoc running
+# against the corresponding file in the src directory.
+# The *.raw.json files are automatically deleted by Make
+# when these targets are called implicitly (i.e. in order to make other targets).
+# However if you'd like to see their content you can call them
+# explicitly. e.g., `make tmp/foo.raw.json`.
 tmp/%.raw.json: src/%.js
 	mkdir -p $(@D)
-	yarn -s jsdoc --configure jsdoc.json --explain --access "public" $< > $@
+	yarn -s jsdoc --configure jsdoc.json --explain $< > $@
 
 tmp/%.meta.json: tmp/%.raw.json scripts/metadata.jq
 	jq -f scripts/metadata.jq $< > $@
