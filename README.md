@@ -20,7 +20,7 @@ Make is the build tool. We use the Google Closure Compiler for compiling and bun
 
 ### Release
 
-On every push to your main branch (either `main` or `master`) a GitHub workflow will automatically publish a new version to both NPM and GitHub. The [semantic-release](https://github.com/semantic-release/semantic-release) tool automatically works out the next version by analysis your commit messages. A CHANGELOG file is automatically generated.
+On every push to your main branch (either `main` or `master`) a GitHub workflow will automatically publish a new version to both NPM and GitHub. The [semantic-release](https://github.com/semantic-release/semantic-release) tool automatically works out the next version by analysing your commit messages. A CHANGELOG file is automatically generated.
 
 ### Pull Request
 
