@@ -25,6 +25,7 @@ jobs:
           docker run --rm
           -v ${{github.workspace}}/public:/srv/slate/build
           -v ${{github.workspace}}/docs/includes:/srv/slate/source/includes
+          -v ${{github.workspace}}/static/logo.png:/srv/slate/source/images/logo.png
           -v ${{github.workspace}}/docs/index.html.md:/srv/slate/source/index.html.md
           slatedocs/slate
 
