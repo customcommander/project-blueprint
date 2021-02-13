@@ -25,7 +25,15 @@ const print_deprecation_warning = () =>
     : `<aside class="warning">
         <strong>DEPRECATED</strong>
         <br>${sym.deprecated}
-      </aside>`)
+      </aside>`);
+
+const section_exceptions = () =>
+  (!sym.exceptions
+    ? ''
+    : sym.exceptions.map(ex =>
+      `<aside class="notice">
+        <strong>Throws:</strong> ${ex}
+      </aside>`).join('\n'));
 %>
 
 
@@ -38,5 +46,7 @@ const print_deprecation_warning = () =>
 <%- print_parameters() %>
 
 Returns `<%- sym.returns %>`.
+
+<%- section_exceptions() %>
 
 <%- print_examples() %>

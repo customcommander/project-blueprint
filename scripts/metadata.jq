@@ -14,6 +14,25 @@ def get_params:
           , description })
     end);
 
+# How @throws annotations are parsed into a raw JSDoc doclet:
+#
+# {
+#   …
+#   "exceptions": [
+#     { "description": "If neither `a` nor `b` is a number" }
+#   ]
+#   …
+# }
+#
+# Takes a doclet and transforms `exceptions` to be
+# an array of strings.
+#
+def get_exceptions:
+  ( if . == null then null
+    else
+      map(.description)
+    end);
+
 def get_returns:
   ( if . == null then null
     else
@@ -23,7 +42,8 @@ def get_returns:
 def get_exports:
   ( map(select(.access == "public"))
   | map({(.name):  (.returns |= get_returns)
-                 | (.params |= get_params) })
+                 | (.params |= get_params)
+                 | (.exceptions |= get_exceptions) })
   | add);
 
 { namespace: get_namespace
