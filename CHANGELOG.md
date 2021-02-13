@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/customcommander/project-blueprint/compare/v1.8.0...v1.8.1) (2021-02-13)
+
+
+### Bug Fixes
+
+* fix bug where table of contents was not properly sorted ([16b72e3](https://github.com/customcommander/project-blueprint/commit/16b72e3b9ce9cc6984c0e54977acaafb662bca7b))
+
 # [1.8.0](https://github.com/customcommander/project-blueprint/compare/v1.7.0...v1.8.0) (2021-02-13)
 
 
