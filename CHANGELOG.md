@@ -1,3 +1,20 @@
+# [1.8.0](https://github.com/customcommander/project-blueprint/compare/v1.7.0...v1.8.0) (2021-02-13)
+
+
+### Bug Fixes
+
+* fix typo in readme ([12c3c88](https://github.com/customcommander/project-blueprint/commit/12c3c88bc7ab3cd6946aaaf91bd8e3fbdb9843ed))
+* remove public access flag when parsing jsdoc annotations and document corresponding makefile target ([810b6e1](https://github.com/customcommander/project-blueprint/commit/810b6e1924e862b4ed08c67a7edcf7f552c34905))
+
+
+### Features
+
+* add import snippets in docs ([d027fd5](https://github.com/customcommander/project-blueprint/commit/d027fd56fb4949121ad20580a8f92710ecd6c2f2))
+* add support for [@throws](https://github.com/throws) jsdoc tag in documentation ([83ddb8d](https://github.com/customcommander/project-blueprint/commit/83ddb8d71a658685b72d9b798bde1f35bd18f90c))
+* allow custom intro for docs. closes [#10](https://github.com/customcommander/project-blueprint/issues/10) ([98421a2](https://github.com/customcommander/project-blueprint/commit/98421a22a5089df3bd18136b1f3fbc14fbc879cf))
+* allow custom logo for docs ([e8cba61](https://github.com/customcommander/project-blueprint/commit/e8cba61d8960639573f6fa3a9665419c929b3d26))
+* does not package code that has no description ([64b1770](https://github.com/customcommander/project-blueprint/commit/64b1770c29cd365be3f93ecabbbc3519e675d4d0))
+
 # [1.7.0](https://github.com/customcommander/project-blueprint/compare/v1.6.0...v1.7.0) (2021-02-07)
 
 
