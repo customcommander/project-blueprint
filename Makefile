@@ -88,4 +88,4 @@ tmp/__exports.json: $(meta_files) scripts/exports.jq
 	jq -f scripts/exports.jq --raw-output -M --slurp $(meta_files) > $@
 
 tmp/__fullmeta.json: $(meta_files)
-	jq 'map(.exports[])' --slurp $^ > $@
+	jq 'map(select(.namespace != null and .exports != null) | .exports[])' --slurp $^ > $@

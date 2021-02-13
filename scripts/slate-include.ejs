@@ -20,9 +20,12 @@ const print_examples = () =>
     : '');
 
 const print_deprecation_warning = () =>
-  (sym.deprecated === null
+  (!sym.deprecated
     ? ''
-    : `<aside class="warning"><strong>DEPRECATED</strong><br>${sym.deprecated}</aside>`)
+    : `<aside class="warning">
+        <strong>DEPRECATED</strong>
+        <br>${sym.deprecated}
+      </aside>`)
 %>
 
 

@@ -1,32 +1,31 @@
-# Takes the JSDoc output of a single source file
-# Transformed document is available at tmp/metadata/*.meta.json
+def get_namespace:
+  ( map(select(.kind == "namespace"))[0]
+  | .longname
+  | if . == "ROOT" then "" else . end);
 
-def dist_path:
-  (.meta.path + "/" + .meta.filename)
-  | ltrimstr("/workspace/dev/src")
-  | "./" + ltrimstr("/");
+def get_type_expr: (.names | join("|"));
 
-def transform_params: map({
-  name,
-  type: (.type.names | join(", ")),
-  description,
-  optional: (.optional == true)
-});
+def get_params:
+  ( if . == null then null
+    else
+      map({ type: (.type | get_type_expr)
+          , name
+          , optional
+          , description })
+    end);
 
-def transform_doclet: {
-  kind,
-  name,
-  location: dist_path,
-  description,
-  examples,
-  params: (if .params then .params | transform_params else null end),
-  returns: (.returns | map(.type.names[]) | join(" | ")),
-  deprecated
-};
+def get_returns:
+  ( if . == null then null
+    else
+      (map(.type | get_type_expr) | join("|"))
+    end);
 
-(map(select(.kind == "namespace"))[0] | .name // "/") as $ns
+def get_exports:
+  ( map(select(.access == "public"))
+  | map({(.name):  (.returns |= get_returns)
+                 | (.params |= get_params) })
+  | add);
 
-| { namespace: $ns
-  , exports: (map(select(.access == "public") | transform_doclet)
-           | reduce .[] as $x ({}; (. + { ($x.name): ({namespace: $ns} + $x) })))
-  }
+{ namespace: get_namespace
+, exports: get_exports
+}
