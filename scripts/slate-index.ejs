@@ -5,7 +5,7 @@ language_tabs:
   - javascript
 
 includes:
-<% syms.sort((a, b) => a > b ? -1 : 1).forEach(sym => {%>
+<% syms.sort((a, b) => a.name > b.name ? 1 : -1).forEach(sym => {%>
   - <%= sym.name %>
 <%})%>
 ---
