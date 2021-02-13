@@ -11,15 +11,8 @@ module.exports = {
    *
    * @example
    * ```javascript
-   * const add = curry((a, b) => a + b);
    * add(1, 2);
    * //=> 3
-   * add(1)(2);
-   * //=> 3
-   *
-   * const add10 = add(10);
-   * add10(5);
-   * //=> 15
    * ```
    *
    * @public
