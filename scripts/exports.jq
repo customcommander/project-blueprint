@@ -1,8 +1,8 @@
-# collect all tmp/metadata/*.meta.json
-# nest all exports under their own namespace.
-# result is available at tmp/exports.json
+def location:
+  ( .meta.path + "/" + .meta.filename
+  | "./" + ltrimstr("/workspace/dev/src/"));
 
-reduce .[] as {$namespace, $exports} ({};
-  ($namespace | ltrimstr("/") | split("/")) as $path
-  | setpath($path; getpath($path) + ($exports | map_values(.location)))
-)
+  map(select(.namespace != null and .exports != null))
+| reduce .[] as {$namespace, $exports} ({};
+    ($namespace | split(".")) as $path
+      | setpath($path; getpath($path) + ($exports | map_values(location))))
