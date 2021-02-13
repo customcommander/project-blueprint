@@ -34,6 +34,25 @@ const section_exceptions = () =>
       `<aside class="notice">
         <strong>Throws:</strong> ${ex}
       </aside>`).join('\n'));
+
+const how_to_import = () => {
+  const code_intro = '```javascript';
+  const code_outro = '```';
+  const ns = sym.memberof === 'ROOT' ? '' : `.${sym.memberof}`;
+
+  // no identation on purpose!
+  return `
+> How to import?
+
+${code_intro}
+// From Node.js
+const {${sym.name}} = require('${process.env.PACKAGE_ID}')${ns};
+// From a browser
+const {${sym.name}} = window.${process.env.BROWSER_NS}${ns};
+${code_outro}
+`;
+}
+
 %>
 
 
@@ -48,5 +67,7 @@ const section_exceptions = () =>
 Returns `<%- sym.returns %>`.
 
 <%- section_exceptions() %>
+
+<%- how_to_import() %>
 
 <%- print_examples() %>
