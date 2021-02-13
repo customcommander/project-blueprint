@@ -40,7 +40,7 @@ def get_returns:
     end);
 
 def get_exports:
-  ( map(select(.access == "public"))
+  ( map(select(.access == "public" and .description != null))
   | map({(.name):  (.returns |= get_returns)
                  | (.params |= get_params)
                  | (.exceptions |= get_exceptions) })
