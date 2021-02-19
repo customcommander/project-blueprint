@@ -1,3 +1,15 @@
+# [1.9.0](https://github.com/customcommander/project-blueprint/compare/v1.8.1...v1.9.0) (2021-02-19)
+
+
+### Bug Fixes
+
+* remove <br> in deprecation block ([6a89200](https://github.com/customcommander/project-blueprint/commit/6a892006c1ca5ceade698f831caffa02b93ebe31))
+
+
+### Features
+
+* add support for indefinite number of parameters ([d4c14c2](https://github.com/customcommander/project-blueprint/commit/d4c14c26f41d80c07719612949e04b6ed1e4e3d7))
+
 ## [1.8.1](https://github.com/customcommander/project-blueprint/compare/v1.8.0...v1.8.1) (2021-02-13)
 
 
