@@ -5,13 +5,16 @@ const sym_name = sym.name.trim();
 const mark_optional = (text, opt) =>
   opt ? `(Optional) ${text}` : text;
 
+const mark_var_arg = (text, varr) =>
+  varr ? `...${text}` : text;
+
 const print_parameters = () =>
   (!sym.params
     ? ''
     : (`Parameter | Type | Description
         --------- | ---- | -----------` +
         sym.params.reduce((str, p) =>
-          str + `\n${p.name} | ${p.type} | ${mark_optional(p.description || 'N/A', p.optional)}`,
+          str + `\n${mark_var_arg(p.name, p.variable)} | ${p.type} | ${mark_optional(p.description || 'N/A', p.optional)}`,
             '')));
 
 const print_examples = () =>
