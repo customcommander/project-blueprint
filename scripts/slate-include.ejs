@@ -23,8 +23,7 @@ const print_deprecation_warning = () =>
   (!sym.deprecated
     ? ''
     : `<aside class="warning">
-        <strong>DEPRECATED</strong>
-        <br>${sym.deprecated}
+        <strong>DEPRECATED</strong>${sym.deprecated}
       </aside>`);
 
 const section_exceptions = () =>
