@@ -21,6 +21,7 @@ module.exports = {
    * @param {string} [prefix] Default "(".
    * @param {string} [suffix] Default ")".
    * @return {string}
+   * @see add
    */
   wrap: (str, prefix, suffix) => `${prefix}${str}${suffix}`
 };

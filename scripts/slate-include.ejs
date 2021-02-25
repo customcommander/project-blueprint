@@ -58,6 +58,11 @@ ${code_outro}
 `;
 }
 
+const section_see_also = () =>
+  (!sym.see
+    ? ''
+    : 'See also ' + sym.see.map(sy => `[${sy}](#${sy})`).join(' — '));
+
 %>
 
 
@@ -74,6 +79,8 @@ ${code_outro}
 <%- print_parameters() %>
 
 Returns `<%- sym.returns %>`.
+
+<%- section_see_also() %>
 
 <%- section_exceptions() %>
 
