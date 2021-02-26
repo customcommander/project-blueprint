@@ -1,3 +1,16 @@
+# [1.10.0](https://github.com/customcommander/project-blueprint/compare/v1.9.0...v1.10.0) (2021-02-26)
+
+
+### Bug Fixes
+
+* escape type union char when printing in a table ([76a7d29](https://github.com/customcommander/project-blueprint/commit/76a7d29c813bebc8e01a23b11acf9da91ad2a9a2))
+* move code sample to the top ([7911a31](https://github.com/customcommander/project-blueprint/commit/7911a31c06f7e0e7fbcd7caf04b5cebb55f033d5))
+
+
+### Features
+
+* support for see tag to link doc sections together ([3fc9e41](https://github.com/customcommander/project-blueprint/commit/3fc9e410a743f701d583d59c381cd658b7e8bbff))
+
 # [1.9.0](https://github.com/customcommander/project-blueprint/compare/v1.8.1...v1.9.0) (2021-02-19)
 
 
