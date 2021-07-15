@@ -1,3 +1,15 @@
+# [1.11.0](https://github.com/customcommander/project-blueprint/compare/v1.10.0...v1.11.0) (2021-07-15)
+
+
+### Bug Fixes
+
+* wrap includes items in quotes to prevent evaluation ([9e8251f](https://github.com/customcommander/project-blueprint/commit/9e8251f233e5040118c5b1195b8b298a855c208e))
+
+
+### Features
+
+* update slate to v2.10.0 ([9aa1e1f](https://github.com/customcommander/project-blueprint/commit/9aa1e1ff287f169ccbdd69d60e130fac71809643))
+
 # [1.10.0](https://github.com/customcommander/project-blueprint/compare/v1.9.0...v1.10.0) (2021-02-26)
 
 
