@@ -1,3 +1,17 @@
+# [1.12.0](https://github.com/customcommander/project-blueprint/compare/v1.11.0...v1.12.0) (2021-11-02)
+
+
+### Bug Fixes
+
+* .env: wrap title within quotes ([fb6dfbd](https://github.com/customcommander/project-blueprint/commit/fb6dfbd71ec42d08564256bf4954261102bf01f8))
+
+
+### Features
+
+* browser namespace in quotes ([b139b64](https://github.com/customcommander/project-blueprint/commit/b139b64910e42174040cb235edc782bed741bad6))
+* update dev container ([6a2f6a7](https://github.com/customcommander/project-blueprint/commit/6a2f6a71fd895517856d4d3a689111ece8259741))
+* update doc container ([c8df32c](https://github.com/customcommander/project-blueprint/commit/c8df32cdfcf56e5b5828882420e97afa0aaee5ae))
+
 # [1.11.0](https://github.com/customcommander/project-blueprint/compare/v1.10.0...v1.11.0) (2021-07-15)
 
 
