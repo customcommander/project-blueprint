@@ -53,7 +53,7 @@ ${code_intro}
 // From Node.js
 const {${sym.name}} = require('${process.env.PACKAGE_ID}')${ns};
 // From a browser
-const {${sym.name}} = window.${process.env.BROWSER_NS}${ns};
+const {${sym.name}} = window['${process.env.BROWSER_NS}']${ns};
 ${code_outro}
 `;
 }
