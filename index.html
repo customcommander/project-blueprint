@@ -1,0 +1,565 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Documentation</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b12a2749.js"></script>
+
+  </head>
+
+  <body class="index" data-languages="[&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-c465ee42.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#project-blueprint-fake-api" class="toc-h1 toc-link" data-title="Project Blueprint Fake API">Project Blueprint Fake API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#add" class="toc-h2 toc-link" data-title="add">add</a>
+                  </li>
+                  <li>
+                    <a href="#answer" class="toc-h2 toc-link" data-title="answer">answer</a>
+                  </li>
+                  <li>
+                    <a href="#curry" class="toc-h2 toc-link" data-title="curry">curry</a>
+                  </li>
+                  <li>
+                    <a href="#dec" class="toc-h2 toc-link" data-title="dec">dec</a>
+                  </li>
+                  <li>
+                    <a href="#inc" class="toc-h2 toc-link" data-title="inc">inc</a>
+                  </li>
+                  <li>
+                    <a href="#sum" class="toc-h2 toc-link" data-title="sum">sum</a>
+                  </li>
+                  <li>
+                    <a href="#wrap" class="toc-h2 toc-link" data-title="wrap">wrap</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='project-blueprint-fake-api'>Project Blueprint Fake API</h1>
+<p>The content of this file (<code>static/intro.md</code>) is added at the top of the documentation.</p>
+<h2 id='add'>add</h2>
+<blockquote>
+<p>How to import?</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// From Node.js</span>
+<span class="kd">const</span> <span class="p">{</span><span class="nx">add</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">@customcommander/project-blueprint</span><span class="dl">'</span><span class="p">).</span><span class="nx">math</span><span class="p">;</span>
+<span class="c1">// From a browser</span>
+<span class="kd">const</span> <span class="p">{</span><span class="nx">add</span><span class="p">}</span> <span class="o">=</span> <span class="nb">window</span><span class="p">[</span><span class="dl">'</span><span class="s1">@customcommander/project-blueprint</span><span class="dl">'</span><span class="p">].</span><span class="nx">math</span><span class="p">;</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="c1">//=&gt; 3</span>
+</code></pre></div>
+<p>Adds <code>a</code> and <code>b</code>.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>a</td>
+<td>number</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>b</td>
+<td>number</td>
+<td>N/A</td>
+</tr>
+</tbody></table>
+
+<p>Returns <code>number</code>.</p>
+
+<aside class="notice">
+        <strong>Throws:</strong> If neither `a` nor `b` is a number
+      </aside>
+<h2 id='answer'>answer</h2>
+<blockquote>
+<p>How to import?</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// From Node.js</span>
+<span class="kd">const</span> <span class="p">{</span><span class="nx">answer</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">@customcommander/project-blueprint</span><span class="dl">'</span><span class="p">).</span><span class="nx">misc</span><span class="p">.</span><span class="nx">random</span><span class="p">;</span>
+<span class="c1">// From a browser</span>
+<span class="kd">const</span> <span class="p">{</span><span class="nx">answer</span><span class="p">}</span> <span class="o">=</span> <span class="nb">window</span><span class="p">[</span><span class="dl">'</span><span class="s1">@customcommander/project-blueprint</span><span class="dl">'</span><span class="p">].</span><span class="nx">misc</span><span class="p">.</span><span class="nx">random</span><span class="p">;</span>
+</code></pre></div>
+<aside class="warning">
+        <strong>DEPRECATED</strong>Just use 42 instead.
+      </aside>
+
+<p>The answer to the universe and everything else.</p>
+
+<p>Returns <code>number</code>.</p>
+<h2 id='curry'>curry</h2>
+<blockquote>
+<p>How to import?</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// From Node.js</span>
+<span class="kd">const</span> <span class="p">{</span><span class="nx">curry</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">@customcommander/project-blueprint</span><span class="dl">'</span><span class="p">);</span>
+<span class="c1">// From a browser</span>
+<span class="kd">const</span> <span class="p">{</span><span class="nx">curry</span><span class="p">}</span> <span class="o">=</span> <span class="nb">window</span><span class="p">[</span><span class="dl">'</span><span class="s1">@customcommander/project-blueprint</span><span class="dl">'</span><span class="p">];</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">add3</span> <span class="o">=</span> <span class="nx">curry</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span> <span class="nx">c</span><span class="p">);</span>
+<span class="nx">add3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="c1">//=&gt; 6</span>
+<span class="nx">add3</span><span class="p">(</span><span class="mi">1</span><span class="p">)(</span><span class="mi">2</span><span class="p">)(</span><span class="mi">3</span><span class="p">);</span>
+<span class="c1">//=&gt; 6</span>
+<span class="nx">add3</span><span class="p">(</span><span class="mi">1</span><span class="p">)()(</span><span class="mi">2</span><span class="p">)()(</span><span class="mi">3</span><span class="p">);</span>
+<span class="c1">//=&gt; 6</span>
+</code></pre></div>
+<p>Returns a curried version of <code>fn</code>.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fn</td>
+<td>function</td>
+<td>N/A</td>
+</tr>
+</tbody></table>
+
+<p>Returns <code>function</code>.</p>
+<h2 id='dec'>dec</h2>
+<blockquote>
+<p>How to import?</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// From Node.js</span>
+<span class="kd">const</span> <span class="p">{</span><span class="nx">dec</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">@customcommander/project-blueprint</span><span class="dl">'</span><span class="p">).</span><span class="nx">math</span><span class="p">;</span>
+<span class="c1">// From a browser</span>
+<span class="kd">const</span> <span class="p">{</span><span class="nx">dec</span><span class="p">}</span> <span class="o">=</span> <span class="nb">window</span><span class="p">[</span><span class="dl">'</span><span class="s1">@customcommander/project-blueprint</span><span class="dl">'</span><span class="p">].</span><span class="nx">math</span><span class="p">;</span>
+</code></pre></div>
+<p>Takes 1 away from <code>x</code>.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>x</td>
+<td>number</td>
+<td>N/A</td>
+</tr>
+</tbody></table>
+
+<p>Returns <code>number</code>.</p>
+<h2 id='inc'>inc</h2>
+<blockquote>
+<p>How to import?</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// From Node.js</span>
+<span class="kd">const</span> <span class="p">{</span><span class="nx">inc</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">@customcommander/project-blueprint</span><span class="dl">'</span><span class="p">).</span><span class="nx">math</span><span class="p">;</span>
+<span class="c1">// From a browser</span>
+<span class="kd">const</span> <span class="p">{</span><span class="nx">inc</span><span class="p">}</span> <span class="o">=</span> <span class="nb">window</span><span class="p">[</span><span class="dl">'</span><span class="s1">@customcommander/project-blueprint</span><span class="dl">'</span><span class="p">].</span><span class="nx">math</span><span class="p">;</span>
+</code></pre></div>
+<p>Adds 1 to <code>x</code>.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>x</td>
+<td>number</td>
+<td>N/A</td>
+</tr>
+</tbody></table>
+
+<p>Returns <code>number</code>.</p>
+<h2 id='sum'>sum</h2>
+<blockquote>
+<p>How to import?</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// From Node.js</span>
+<span class="kd">const</span> <span class="p">{</span><span class="nx">sum</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">@customcommander/project-blueprint</span><span class="dl">'</span><span class="p">).</span><span class="nx">math</span><span class="p">;</span>
+<span class="c1">// From a browser</span>
+<span class="kd">const</span> <span class="p">{</span><span class="nx">sum</span><span class="p">}</span> <span class="o">=</span> <span class="nb">window</span><span class="p">[</span><span class="dl">'</span><span class="s1">@customcommander/project-blueprint</span><span class="dl">'</span><span class="p">].</span><span class="nx">math</span><span class="p">;</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">sum</span><span class="p">();</span>
+<span class="c1">//=&gt; 0</span>
+<span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="c1">//=&gt; 1</span>
+<span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="c1">//=&gt; 3</span>
+<span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="c1">//=&gt; 6</span>
+</code></pre></div>
+<p>Adds all numbers together.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>...x</td>
+<td>number</td>
+<td>A list of numbers</td>
+</tr>
+</tbody></table>
+
+<p>Returns <code>number</code>.</p>
+<h2 id='wrap'>wrap</h2>
+<blockquote>
+<p>How to import?</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// From Node.js</span>
+<span class="kd">const</span> <span class="p">{</span><span class="nx">wrap</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">@customcommander/project-blueprint</span><span class="dl">'</span><span class="p">).</span><span class="nx">string</span><span class="p">;</span>
+<span class="c1">// From a browser</span>
+<span class="kd">const</span> <span class="p">{</span><span class="nx">wrap</span><span class="p">}</span> <span class="o">=</span> <span class="nb">window</span><span class="p">[</span><span class="dl">'</span><span class="s1">@customcommander/project-blueprint</span><span class="dl">'</span><span class="p">].</span><span class="nx">string</span><span class="p">;</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">wrap</span><span class="p">(</span><span class="dl">"</span><span class="s2">foo</span><span class="dl">"</span><span class="p">);</span>
+<span class="c1">//=&gt; "(foo)"</span>
+
+<span class="nx">wrap</span><span class="p">(</span><span class="dl">"</span><span class="s2">foo</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">&lt;</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">&gt;</span><span class="dl">"</span><span class="p">);</span>
+<span class="c1">//=&gt; "&lt;foo&gt;"</span>
+</code></pre></div>
+<p>Wraps <code>str</code> between <code>prefix</code> and <code>suffix</code>.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>str</td>
+<td>string</td>
+<td>The string to wrap.</td>
+</tr>
+<tr>
+<td>prefix</td>
+<td>string</td>
+<td>(Optional) Default &quot;(&quot;.</td>
+</tr>
+<tr>
+<td>suffix</td>
+<td>string</td>
+<td>(Optional) Default &quot;)&quot;.</td>
+</tr>
+</tbody></table>
+
+<p>Returns <code>string</code>.</p>
+
+<p>See also <a href="#add">add</a></p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
