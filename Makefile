@@ -66,7 +66,7 @@ dist/index.js: dist/__exports.js
 	sed 's/window.__________/module.exports/' $< > $@
 
 dist/browser.min.js: dist/__exports.js
-	sed 's/window.__________/window.$(BROWSER_NS)/' $< > $@
+	sed 's#window.__________#window["$(BROWSER_NS)"]#' $< > $@
 
 # For each file in `src` we have a corresponding file in `tmp` e.g.,
 # src/foo.js -> tmp/foo.raw.json
